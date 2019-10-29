@@ -8,6 +8,7 @@ package com.mycompany.proyectocontaminacion;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -20,7 +21,7 @@ import java.util.logging.Logger;
 public class AccesoFichero {
     public static ArrayList<Contaminacion> leerDatosContaminacion() 
     {
-         ArrayList<Contaminacion> lista_contaminaciones=new ArrayList<>();
+        ArrayList<Contaminacion> lista_contaminaciones=new ArrayList<>();
         try {
            
             FileReader lector=new FileReader("C:\\contaminacion\\horario.csv");
@@ -52,5 +53,24 @@ public class AccesoFichero {
             Logger.getLogger(AccesoFichero.class.getName()).log(Level.SEVERE, null, ex);
         }
         return lista_contaminaciones;
+    }
+
+    static void grabarTablaHTML(String html_tabla) {
+        String html="<!DOCTYPE html>\n" +
+"<html>\n" +
+"<head>\n" +
+"<title>Title of the document</title>\n" +
+"</head>\n" +
+"\n" +
+"<body>"+html_tabla+"</body></html>";
+        try {
+            FileWriter fw=new FileWriter("C:\\contaminacion\\horario.html");
+            fw.write(html);
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AccesoFichero.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 }

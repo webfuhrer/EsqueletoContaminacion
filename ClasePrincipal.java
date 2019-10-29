@@ -14,5 +14,9 @@ import java.util.ArrayList;
 public class ClasePrincipal {
     public static void main(String[] args) {
         ArrayList<Contaminacion> datos=AccesoFichero.leerDatosContaminacion();
+        String html_tabla=PintaHTML.crearTabla(datos);
+        AccesoFichero.grabarTablaHTML(html_tabla);
+        System.out.println(html_tabla);
+        //Magnitud Estacion 0-1 1-2 2-3 .....
     }
 }

@@ -8,6 +8,7 @@ package com.mycompany.proyectocontaminacion;
 import java.util.ArrayList;
 
 /**
+    
  *
  * @author CDMFP
  */
@@ -17,13 +18,12 @@ public class Contaminacion {
     private String estacion;
     private ArrayList<String> cantidades;
 
-    public Contaminacion(String fecha, String magnitud, String estacion, ArrayList<String> cantidades) {
+public Contaminacion(String fecha, String magnitud, String estacion, ArrayList<String> cantidades) {
         this.fecha = fecha;
         this.magnitud = magnitud;
         this.estacion = estacion;
         this.cantidades = cantidades;
     }
-
     public String getFecha() {
         return fecha;
     }
